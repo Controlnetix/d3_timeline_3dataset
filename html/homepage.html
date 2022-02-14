@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../css/homepage.css">
+    <script src="../js/d3.min.js" defer></script>
+    <script src="../js/homepage.js" defer></script>
+    <meta charset="UTF-8">
+    <title>D3 v6 Timeline</title>
+
+<script type="text/javascript">
+        window.onload = function() {
+                var sT1 = new Date("January 15, 2022 07:00:00");
+                var sT2 = new Date("January 15, 2022 07:15:00");     
+                var sT3 = new Date("January 15, 2022 07:30:00");
+                var sT4 = new Date("January 15, 2022 07:45:00");
+                var sT5 = new Date("January 15, 2022 08:00:00");
+                var sT6 = new Date("January 15, 2022 08:15:00");
+                var sT7 = new Date("January 15, 2022 08:30:00");     
+                var sT8 = new Date("January 15, 2022 08:45:00");
+                var sT9 = new Date("January 15, 2022 09:00:00");
+                var sT10 = new Date("January 15, 2022 09:15:00");
+                var sT11 = new Date("January 15, 2022 09:30:00");
+                var sT12 = new Date("January 15, 2022 09:45:00");      
+                var sT13 = new Date("January 15, 2022 10:00:00");
+                var sT14 = new Date("January 15, 2022 10:15:00");
+                var sT15 = new Date("January 15, 2022 10:30:00");
+                var sT16 = new Date("January 15, 2022 10:45:00");
+                var sT17 = new Date("January 15, 2022 11:00:00");      
+                var sT18 = new Date("January 15, 2022 11:15:00");
+                var sT19 = new Date("January 15, 2022 11:30:00");
+                var sT20 = new Date("January 15, 2022 11:45:00");
+                var sT21 = new Date("January 15, 2022 12:00:00");
+        
+        
+            const runningDataset = [{Date:Number(sT1)/1000, Value:1},{Date:Number(sT2)/1000, Value:0},{Date:Number(sT3)/1000, Value:0},
+                                    {Date:Number(sT4)/1000, Value:1},{Date:Number(sT5)/1000, Value:0},{Date:Number(sT6)/1000, Value:0},
+                                    {Date:Number(sT7)/1000, Value:1},{Date:Number(sT8)/1000, Value:0},{Date:Number(sT9)/1000, Value:0},
+                                    {Date:Number(sT10)/1000, Value:1},{Date:Number(sT11)/1000, Value:0},{Date:Number(sT12)/1000, Value:0},
+                                    {Date:Number(sT13)/1000, Value:1},{Date:Number(sT14)/1000, Value:0},{Date:Number(sT15)/1000, Value:0},
+                                    {Date:Number(sT16)/1000, Value:1},{Date:Number(sT17)/1000, Value:0},{Date:Number(sT18)/1000, Value:0},
+                                    {Date:Number(sT19)/1000, Value:1},{Date:Number(sT20)/1000,Value:0},{Date:Number(sT21)/1000, Value:0}];
+            const downtimeDataset = [{Date:Number(sT1)/1000, Value:0},{Date:Number(sT2)/1000, Value:2},{Date:Number(sT3)/1000, Value:0},
+                                    {Date:Number(sT4)/1000, Value:0},{Date:Number(sT5)/1000, Value:2},{Date:Number(sT6)/1000, Value:0},
+                                    {Date:Number(sT7)/1000, Value:0},{Date:Number(sT8)/1000, Value:2},{Date:Number(sT9)/1000, Value:0},
+                                    {Date:Number(sT10)/1000, Value:0},{Date:Number(sT11)/1000, Value:2},{Date:Number(sT12)/1000, Value:0},
+                                    {Date:Number(sT13)/1000, Value:0},{Date:Number(sT14)/1000, Value:2},{Date:Number(sT15)/1000, Value:0},
+                                    {Date:Number(sT16)/1000, Value:0},{Date:Number(sT17)/1000, Value:2},{Date:Number(sT18)/1000, Value:0},
+                                    {Date:Number(sT19)/1000, Value:0},{Date:Number(sT20)/1000,Value:2},{Date:Number(sT21)/1000, Value:0}];
+            const poweroffDataset = [{Date:Number(sT1)/1000, Value:0},{Date:Number(sT2)/1000, Value:0},{Date:Number(sT3)/1000, Value:3},
+                                    {Date:Number(sT4)/1000, Value:0},{Date:Number(sT5)/1000, Value:0},{Date:Number(sT6)/1000, Value:3},
+                                    {Date:Number(sT7)/1000, Value:0},{Date:Number(sT8)/1000, Value:0},{Date:Number(sT9)/1000, Value:3},
+                                    {Date:Number(sT10)/1000, Value:0},{Date:Number(sT11)/1000, Value:0},{Date:Number(sT12)/1000, Value:3},
+                                    {Date:Number(sT13)/1000, Value:0},{Date:Number(sT14)/1000, Value:0},{Date:Number(sT15)/1000, Value:3},
+                                    {Date:Number(sT16)/1000, Value:0},{Date:Number(sT17)/1000, Value:0},{Date:Number(sT18)/1000, Value:3},
+                                    {Date:Number(sT19)/1000, Value:0},{Date:Number(sT20)/1000,Value:0},{Date:Number(sT21)/1000, Value:3}];
+                   
+            DrawTimeLine(runningDataset, downtimeDataset, poweroffDataset);
+            DrawTimeLinePanel(runningDataset, downtimeDataset, poweroffDataset);
+              
+        
+        }   
+</script>
+
+
+
+</head>
+<body>
+<h1>Three Machine states timeline with zoom panel</h1>
+<h3>Production, Downtime, poweroff</h3>
+<div id="timeline-panel"></div>
+<div id="timeline"></div>
+</body>
+</html>
